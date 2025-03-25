@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Go Out With Me?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #e6e6fa;
+            background-image: url('https://source.unsplash.com/1600x900/?cute,stars,purple');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #9370db;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            width: 200px;
+        }
+        .yes {
+            background-color: #8a2be2;
+            color: white;
+        }
+        .yes:hover {
+            background-color: #6a0dad;
+        }
+        .no {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+        }
+        .no:hover {
+            background-color: #d32f2f;
+        }
+        #message {
+            font-size: 22px;
+            margin-top: 20px;
+            color: #4CAF50;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>One year together deserves a special celebration. Will you let me take you out this Thursday (3/4) to celebrate?</h1>
+    <div class="buttons">
+        <button class="yes" onclick="showMessage()">Yes</button>
+        <button class="no" onmouseover="moveButton()">No</button>
+    </div>
+    <p id="message" style="display: none;"></p>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").innerText = "YAAAAYYYYYYY! " + "CAN'T WAIT FOR OUR FIRST OF MANYY! 🫶";
+            document.getElementById("message").style.display = "block";
+        }
+        function moveButton() {
+            let button = document.querySelector(".no");
+            let x = Math.random() * window.innerWidth * 0.4 + 100;
+            let y = Math.random() * window.innerHeight * 0.4 + 100;
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
